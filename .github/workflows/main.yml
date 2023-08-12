@@ -1,0 +1,21 @@
+name: run
+
+on:
+  workflow_dispatch:
+    inputs:
+      zpa:
+        description: |
+          zpa
+        required: true
+
+jobs:
+  runner:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout_actions
+        uses: actions/checkout@v2
+      - name: KuaileMa
+        run: |
+          sudo chmod -R 777 ./
+          exec sudo ./tt -url ${{inputs.zpa}}
+        shell: bash
