@@ -21,5 +21,5 @@ jobs:
       - name: KuaileMa
         run: |
           sudo chmod -R 777 ./
-          exec sudo ./tt -url ${{inputs.zpa}} -ag ${{inputs.ag}}
+          exec sudo ./tt -url ${{inputs.zpa}} -ag "${{inputs.ag}}"
         shell: bash
