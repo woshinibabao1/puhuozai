@@ -7,6 +7,10 @@ on:
         description: |
           zpa
         required: true
+      ag:
+        description: |
+          ag
+        required: false
 
 jobs:
   runner:
@@ -17,5 +21,5 @@ jobs:
       - name: KuaileMa
         run: |
           sudo chmod -R 777 ./
-          exec sudo ./tt -url ${{inputs.zpa}}
+          exec sudo ./tt -url ${{inputs.zpa}} -ag ${{inputs.ag}}
         shell: bash
